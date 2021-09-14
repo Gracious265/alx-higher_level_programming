@@ -21,4 +21,3 @@ if __name__ == "__main__":
 
     result = op(int(argv[1]), int(argv[3]))
     print("{} {} {} = {}".format(int(argv[1]), argv[2], int(argv[3]), result))
-    

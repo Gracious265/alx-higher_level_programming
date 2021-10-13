@@ -1,0 +1,71 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``base_geometry``
+-------------------
+Checking docstring for module:
+>>> __import__('7-base_geometry').__doc__ != None
+True
+
+Checking docstring for methods:
+>>> __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__ != None
+True
+>>> __import__('7-base_geometry').BaseGeometry.area.__doc__ != None
+True
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> len(BaseGeometry.__doc__) > 0
+True
+
+
+checking new instance/object
+>>> bg = BaseGeometry()
+
+checking new instance with more parameters
+>>> bg = BaseGeometry(1)
+Traceback (most recent call last):
+...
+TypeError: object() takes no parameters
+
+>>> bg = BaseGeometry("str", 1)
+Traceback (most recent call last):
+...
+TypeError: object() takes no parameters
+
+checking area
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+checking value and Type
+>>> bg.integer_validator("zero", 0)
+Traceback (most recent call last):
+...
+ValueError: zero must be greater than 0
+
+
+>>> bg.integer_validator("my_int", 12)
+
+>>> bg.integer_validator("width", 89)
+
+>>> bg.integer_validator("str", -10)
+Traceback (most recent call last):
+...
+ValueError: str must be greater than 0
+
+>>> bg.integer_validator("str", "srt")
+Traceback (most recent call last):
+...
+TypeError: str must be an integer
+
+>>> bg.integer_validator("srt")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("srt", 1, [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given

@@ -5,5 +5,5 @@ if (argsLen === 2){
 } else if (argsLen === 3) {
     console.log('Argument found');
 } else if (argsLen > 3) {
-    console.log('Arguments found')
+    console.log('Arguments found');
 }
